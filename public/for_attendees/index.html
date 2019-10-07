@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingestly O2O / For Attendees</title>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+<div width="100%">
+    <h1>Ingestly O2O / For Attendees</h1>
+
+    <div>
+        <button id="generate_code" style="padding: 20px;">Click here to generate your code.</button>
+    </div>
+
+    <canvas id="canvas" style="width: 100%"></canvas>
+
+    <script src="/js/ingestly.js"></script>
+    <script src="/js/page_code.js"></script>
+
+    <script src="/js/o2o_bundle.min.js"></script>
+    <script>
+
+        // Define the event name
+        var eventName = 'smart event';
+
+        document.getElementById('generate_code').addEventListener('click', function () {
+
+            // Generate a code and print it on HTML
+            var result = generateCode('ingestly', eventName, document.getElementById('canvas'));
+
+            // Send an event to Ingestly
+            Ingestly.trackAction('generate', 'o2o_code', {
+                ooName: eventName,
+                ooResult: result
+            });
+
+        }, false);
+
+    </script>
+
+</div>
+</body>
+</html>

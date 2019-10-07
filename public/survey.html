@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingestly Survey</title>
+</head>
+<body style="margin: 0; padding: 0;">
+<div style="width: 840px; margin: 40px 50px; padding: 0;">
+    <header id="header"  style="width: 100%; margin: 0; padding: 0;">
+        <div style="float: left; height: 100px; width: 60%">
+            <h1 id="title">Ingestly Survey</h1>
+        </div>
+        <div style="float: right; height: 100px; width: 40%; text-align: right;">
+            <button id="login">Login</button>
+            <button id="sign-up" >Sign up</button>
+        </div>
+    </header>
+    <div id="body" data-trackable="body" style="margin-left: auto; margin-right: auto; clear: both; width: 100%">
+        <div id="menu" data-trackable="menu" style="float: left; width: 20%">
+            <ul>
+                <li><a href="/" data-trackable="home">Home</a></li>
+                <li><a href="/survey.html" data-trackable="survey">Survey</a></li>
+                <li><a href="/for_attendees/" data-trackable="o2o">O2O 2D code</a></li>
+                <li><a href="/form.html" data-trackable="form">Form Analysis</a></li>
+            </ul>
+        </div>
+        <div id="content" style="float: right; width: 80%">
+            <form name="form1" id="simple_form">
+                <table>
+                    <tr><th>Text</th><td><input type="text" name="form_text" placeholder="some text" /></td></tr>
+                    <tr><th>Checkbox</th><td><input type="checkbox" name="form_checkbox" value="checkbox" /> Check here</td></tr>
+                    <tr><th>Radio Button</th><td><input type="radio" name="form_radio" value="A" /><input type="radio" name="form_radio" value="B" /></td></tr>
+                    <tr><th>Select</th><td>
+                        <select name="form_select">
+                            <option value="s1">S1</option>
+                            <option value="s2">S2</option>
+                            <option value="s3">S3</option>
+                            <option value="s4">S4</option>
+                        </select>
+                    </td></tr>
+                    <tr><th>Textarea</th><td><textarea name="form_textarea" placeholder="paragraphs"></textarea></td></tr>
+                    <tr><th></th><td><input type="button" name="form_button" id="form_button" value="submit" /></td></tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <footer id="footer" style="clear: both;">
+        <p>Copyright</p>
+    </footer>
+</div>
+<script src="/js/ingestly.js"></script>
+<script src="/js/page_code.js"></script>
+<script src="/js/ingestly-survey.js"></script>
+
+<script>
+    document.getElementById('form_button').addEventListener('click', function(){
+
+        // Send the result to Ingestly
+        IngestlySurvey.submitResult('hoge', document.getElementById('simple_form'));
+
+        // Deactivate the form
+        document.getElementById('simple_form').innerHTML = '<p style="font-weight: bold; color: #04cc04">Thank you!</p>';
+
+    }, false);
+</script>
+
+</body>
+</html>
