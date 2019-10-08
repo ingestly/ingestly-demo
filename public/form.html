@@ -24,9 +24,37 @@
             </ul>
         </div>
         <div id="content" style="float: right; width: 80%">
-            <form name="form1">
-                <input type="text" name="form_text" id="form_text" />
-                <input type="checkbox" name="form_checkbox" id="form_checkbox" />
+            <form name="form1" id="simple_form">
+                <table border="1">
+                    <tr><th>Text</th><td><input type="text" name="free-text" placeholder="some text" /></td></tr>
+                    <tr><th>Password</th><td><input type="password" name="password-box" placeholder="some text" /></td></tr>
+                    <tr><th>Checkbox</th><td><input type="checkbox" name="checkbox-a" value="c1" /> C1</td></tr>
+                    <tr><th></th><td><input type="checkbox" name="multiple-choice" value="c2" /> C2</td></tr>
+                    <tr><th></th><td><input type="checkbox" name="multiple-choice" value="c3" /> C3</td></tr>
+                    <tr><th></th><td><input type="checkbox" name="multiple-choice" value="c4" /> C4</td></tr>
+                    <tr><th>Radio Button</th><td><input type="radio" name="single-choice" value="r1" /> R1</td></tr>
+                    <tr><th></th><td><input type="radio" name="single-choice" value="r2" /> R2</td></tr>
+                    <tr><th></th><td><input type="radio" name="single-choice" value="r3" /> R3</td></tr>
+                    <tr><th></th><td><input type="radio" name="single-choice" value="r4" /> R4</td></tr>
+                    <tr><th>Single Select</th><td>
+                        <select name="form_select_1">
+                            <option value="s1-1">S1-1</option>
+                            <option value="s1-2">S1-2</option>
+                            <option value="s1-3">S1-3</option>
+                            <option value="s1-4">S1-4</option>
+                        </select>
+                    </td></tr>
+                    <tr><th>Multiple Select</th><td>
+                        <select name="form_select_2" size="4" multiple>
+                            <option value="s2-1">S2-1</option>
+                            <option value="s2-2">S2-2</option>
+                            <option value="s2-3">S2-3</option>
+                            <option value="s2-4">S2-4</option>
+                        </select>
+                    </td></tr>
+                    <tr><th>Textarea</th><td><textarea name="form_textarea" size="4" placeholder="paragraphs"></textarea></td></tr>
+                    <tr><th></th><td><input type="button" name="form_button" id="form_button" value="submit" /></td></tr>
+                </table>
             </form>
         </div>
     </div>
